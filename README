@@ -2,7 +2,7 @@ The aim of this project was to further Kubernetes skills as follows:
 1. Provision servers with Ansible
 2. Use a local docker repository setup on master node
 3. Understand what Helm can do 
-4 Scale using a metric collected by Prometheus
+4. Scale using a metric collected by Prometheus
 
 The basic setup was 4 uBuntu servers on AWS.
 A simple setup on a VPC with a public only network.
