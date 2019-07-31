@@ -1,0 +1,1 @@
+scp  -i "~/.ssh/roni-sandbox.pem" $1 ubuntu@ec2-54-209-242-202.compute-1.amazonaws.com:$2
