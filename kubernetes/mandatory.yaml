@@ -222,8 +222,10 @@ spec:
             - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
             - --publish-service=$(POD_NAMESPACE)/ingress-nginx
             - --annotations-prefix=nginx.ingress.kubernetes.io
-            - --default-ssl-certificate=default/inet
+            - --default-ssl-certificate=default/hyperlync
             - --enable-ssl-passthrough
+#            - --default-backend-service=$(POD_NAMESPACE)/nginx-default-backend
+
           securityContext:
             allowPrivilegeEscalation: true
             capabilities:

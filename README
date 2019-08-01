@@ -10,7 +10,14 @@ A simple setup on a VPC with a public only network.
     1 Nginx ingress server
     2 web servers
 Security group needed port 6443 open for TCP so nodes could talk to the master.
+This was a useful doc especially with network setup:
+    https://www.cloudtechnologyexperts.com/kubeadm-on-aws/
 
 We use a simple hello world web app to be found on the docker hub at:
     yerachw/flaskube:latest
 It's gunicorn server listens on port 8080.
+
+We installed Nginx Ingress using this version:
+    https://kubernetes.github.io/ingress-nginx/
+mandatory was modified to include an ssl certificate and a default backend
+Certificate created as per above doc

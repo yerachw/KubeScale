@@ -4,9 +4,9 @@ metadata:
   name: web
 spec:
   ports:
-  - port: 5000
+  - port: 8080
     protocol: TCP
-    targetPort: 5000
+    targetPort: 8080
   selector:
     app: web
   sessionAffinity: ClientIP
@@ -27,25 +27,16 @@ spec:
         app: web
     spec:
       containers:
-      - env:
-        - name: VERSION
-          value: 1.0.25
-        envFrom:
-        - configMapRef:
-            name: envars
-        - secretRef:
-            name: secrets
-        image: yerachw/inet-web:latest
+      - name: flaskube
+        image: yerachw/flaskube:latest
         livenessProbe:
           httpGet:
-            path: /health
-            port: 5000
+            path: /
+            port: 8080
           initialDelaySeconds: 60
           periodSeconds: 60
         name: web
         ports:
-        - containerPort: 5000
-      imagePullSecrets:
-      - name: regcred
+        - containerPort: 8080
       nodeSelector:
         target: web
