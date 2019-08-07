@@ -38,5 +38,3 @@ spec:
         name: web
         ports:
         - containerPort: 8080
-      nodeSelector:
-        target: web

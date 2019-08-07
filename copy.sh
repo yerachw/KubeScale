@@ -1,1 +1,1 @@
-scp  -i "~/.ssh/roni-sandbox.pem" $1 ubuntu@184.73.3.61:$2
+scp  -i "~/.ssh/roni-sandbox.pem" $1 ubuntu@54.90.84.94:$2

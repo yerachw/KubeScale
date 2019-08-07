@@ -1,0 +1,15 @@
+SecurityGroups	sg-07663cbaed5cb6220
+SubnetIds	    subnet-0fc1e434e2d5c29c5,subnet-0e929718a5ac383b2
+VpcId	        vpc-006cd6c6a09a87b1b
+
+This method to settup the dashboard works perfectly:
+https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html
+
+Get dashboard token:
+    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
+To run the dashboard:
+    kubectl proxy
+    http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
+
+    
+aws eks create-cluster --name scaling --role-arn arn:aws:iam::021222724407:role/eksServiceRole --resources-vpc-config subnetIds=subnet-0fc1e434e2d5c29c5,subnet-0e929718a5ac383b2,securityGroupIds=sg-07663cbaed5cb6220

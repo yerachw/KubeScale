@@ -2,7 +2,7 @@
   become: yes
   tasks:
     - name: initialize the cluster
-      shell: kubeadm init
+      shell: kubeadm init --apiserver-cert-extra-sans=54.90.84.94
       args:
         chdir: $HOME
 

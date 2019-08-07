@@ -1,1 +1,4 @@
 kubernetes/hyperlync.cert.zip
+bastion.sh
+copy.sh
+kubernetes/config-demo

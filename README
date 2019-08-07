@@ -21,3 +21,4 @@ We installed Nginx Ingress using this version:
     https://kubernetes.github.io/ingress-nginx/
 mandatory was modified to include an ssl certificate and a default backend
 Certificate created as per above doc
+
